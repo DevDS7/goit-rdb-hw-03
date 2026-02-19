@@ -1,0 +1,33 @@
+1_1.
+
+SELECT *
+FROM mydb.products;
+
+1_2.
+
+SELECT name, phone
+FROM mydb.shippers;
+
+2.
+
+SELECT ROUND(AVG(price),2) AS average_price, MAX(price) AS max_price, MIN(price) AS min_price
+FROM mydb.products;
+
+3.
+
+SELECT DISTINCT category_id, price
+FROM mydb.products
+ORDER BY price DESC
+LIMIT 10;
+
+4.
+
+SELECT COUNT(price) AS product_count_20_100
+FROM mydb.products
+WHERE price >= 20 AND price <= 100;
+
+5.
+
+SELECT supplier_id, COUNT(name) AS product_count, ROUND(AVG(price),2) AS avg_price
+FROM mydb.products
+GROUP BY supplier_id;
